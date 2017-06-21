@@ -1,19 +1,63 @@
-<nav
+<!-- <nav
     class="navbar navbar-fixed-top global-header"
     role="navigation"
->
+> -->
     <!--@LOGO-->
-    <div class="global-logo">
+    <!-- <div class="global-logo">
         <a href="/">
             <img
                 src="https://s3-ap-northeast-1.amazonaws.com/pixelstairsdev/assets/logo/text_b.png"
                 alt="global-logo"
             >
         </a>
-    </div>
+    </div> -->
     <!--@LOGO END-->
 
-    <div class="global-menu-wrapper">
-        
+    <!-- <div class="global-menu-wrapper">
+
     </div>
-</nav>
+</nav> -->
+<md-toolbar layout="row" layout-align="center center" class="global-header" md-whiteframe="10">
+
+    <section class="global-logo-section" layout="row">
+        <div class="global-logo" layout-align="start center">
+            <img src="https://s3-ap-northeast-1.amazonaws.com/pixelstairsdev/assets/logo/logo_w.png" alt="global-logo">
+        </div>
+    </section>
+
+    <section class="link-icon-section" flex layout="row" layout-align="center center">
+        <md-button
+            class="md-icon-button"
+            ng-repeat="menu in GlobalHeaderCtrl.linkMenuList"
+            ui-sref="{{menu.link}}"
+        >
+            <md-icon><i class="{{menu.icon}}"></i></md-icon>
+            <md-tooltip md-direction="bottom">{{menu.name}}</md-tooltip>
+        </md-button>
+    </section>
+
+    <section class="user-section" layout="row" layout-aligh="right center">
+        <div class="user-info-wrap">
+            <md-menu md-offset="0 80" md-position-mode="target-right target">
+                <md-button class="md-fab md-mini" ng-click="GlobalHeaderCtrl.userMenuTrigger($mdOpenMenu, $event)">
+                    <img ng-src="{{GlobalHeaderCtrl.userProfileImg}}">
+                    <md-tooltip md-direction="bottom">계정 메뉴</md-tooltip>
+                </md-button>
+                <md-menu-content width="4" layout="column">
+                    <md-menu-item flex ng-repeat="menu in GlobalHeaderCtrl.userMenuList">
+                        <md-button flex>
+                            <i class="{{menu.icon}}"></i>
+                            <span>{{menu.name}}</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item flex>
+                        <md-button ng-click="GlobalHeaderCtrl.signout()" flex>
+                            <i class="xi-power-off"></i>
+                            <span>퇴근하기</span>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+    </section>
+</md-toolbar>

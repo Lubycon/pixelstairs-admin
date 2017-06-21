@@ -23,3 +23,19 @@ ul, li {
         min-height: calc(100vh - #{$global-header-height});
     }
 }
+
+md-tooltip {
+    * {
+        color: $white;
+    }
+}
+
+md-menu-content {
+    md-menu-item {
+        .md-button {
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+}

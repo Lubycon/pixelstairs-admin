@@ -84,10 +84,6 @@ export class AuthenticationService {
             this.$rootScope.member = res.result;
             this.$rootScope.authStatus.status = res.result.status;
 
-            if(this.$rootScope.member.country) {
-                this.AppSettingService.set('country', this.$rootScope.member.country.alpha2Code);
-            }
-
             this.CookieService.put('member', this.$rootScope.member);
 
             defer.resolve();
@@ -107,7 +103,6 @@ export class AuthenticationService {
         this.APIService.resource('member.simple').get().then(res => {
             this.$rootScope.member = res.result;
             this.CookieService.put('member', this.$rootScope.member);
-            this.AppSettingService.set('country', this.$rootScope.member.country.alpha2Code);
 
             if(state) this.$state.go(state.name, state.params);
             else return false;
@@ -168,8 +163,6 @@ export class AuthenticationService {
         this.$rootScope.authStatus.sign = false;
 
         this.CookieService.putEncrypt('authStatus', this.$rootScope.authStatus);
-
-        this.AppSettingService.set('country', this.$rootScope.setting.country_code);
 
         this.$state.go('common.default.main');
     }
