@@ -1,0 +1,119 @@
+// FORM CONTROL
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+mdp-date-picker {
+    md-input-container {
+        width: 100%;
+    }
+}
+
+md-input-container {
+    md-icon {
+        color: $silver-grey;
+        cursor: pointer;
+        outline: none;
+        transition: all 0.2s;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+form {
+    md-card, .md-card {
+        padding: 50px;
+        box-sizing: border-box;
+
+        .btn-wrap {
+            border-top: 1px solid $light-grey;
+        }
+
+        .option-wrapper {
+            .md-errors-spacer {
+                display: none;
+            }
+        }
+    }
+
+    .fieldset {
+        legend {
+            color: $mine-black;
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid $light-grey;
+        }
+
+        .fieldset-hint {
+            color: $silver-grey;
+            font-size: 14px;
+        }
+
+        .my-error-message {
+            color: $dark-red;
+            font-size: 12px;
+            margin-top:5px;
+            float: right;
+            min-height: 24px;
+            min-width: 1px;
+        }
+
+        .hint {
+            /* Position the hint */
+            position: absolute;
+            left: 2px;
+            right: auto;
+            top: 40px;
+            /* Copy styles from ng-messages */
+            font-size: 12px;
+            line-height: 14px;
+            transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+            /* Set our own color */
+            color: grey;
+        }
+        .hint.ng-hide,
+        .hint.ng-enter,
+        .hint.ng-leave.ng-leave-active {
+            bottom: 26px;
+            opacity: 0;
+        }
+        .hint.ng-leave,
+        .hint.ng-enter.ng-enter-active {
+            bottom: 7px;
+            opacity: 1;
+        }
+        .new-category-wrap {
+            margin-bottom: 10px;
+            md-input-container {
+                margin-bottom: 0;
+            }
+            .md-errors-spacer {
+                display: none;
+            }
+        }
+    }
+}
+
+// MODAL
+md-dialog {
+    md-toolbar {
+        .md-toolbar-tools {
+            background-color: $blue;
+            color: $white;
+        }
+    }
+}
+
+// BUTTONS
+md-button,md-button.md-raised,
+.md-button, .md-button.md-raised {
+
+}

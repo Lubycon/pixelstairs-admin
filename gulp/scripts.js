@@ -23,7 +23,7 @@ function webpackWrapper(watch, test, callback) {
                 exclude: /node_modules/,
                 loaders: [
                     'ng-annotate',
-                    'babel-loader'
+                    'babel-loader?presets[]=es2015'
                 ]
             }]
         },

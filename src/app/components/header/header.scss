@@ -1,0 +1,75 @@
+.global-header {
+    min-height: $global-header-height;
+    background-color: $white;
+    .global-logo {
+        width: 160px;
+        @include floatToCenter;
+    }
+
+    .global-menu-wrapper {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        ul {
+            li {
+                display: inline-block;
+                margin: 0 5px;
+                padding: 5px 10px;
+                &.global-menu {
+                    border: 2px solid $dove-grey;
+                }
+
+                &.member-menu {
+                    .user-info {
+
+                        .user-profile-img {
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin-right: 7px;
+                            @include circleFrame(35px);
+                        }
+
+                        a {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    ul.dropdown-menu {
+                        li {
+                            width: 100%;
+                            margin: 0;
+                            a {
+                                position: relative;
+                                padding: 7px 14px;
+
+                                i {
+                                    position: absolute;
+                                    top: 50%;
+                                    right: 14px;
+                                    transform: translateY(-50%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        .global-logo {
+            width: 120px;
+        }
+
+        .global-menu-wrapper {
+            ul {
+                li {
+                    margin: 0;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

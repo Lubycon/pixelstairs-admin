@@ -1,0 +1,10 @@
+
+<div ui-view="header" ng-if="layout.header"></div>
+<div id="container" class="container full-width" ng-class="{'with-header' : layout.header}">
+    <div layout="row">
+        <div ui-view="aside" flex-order="1"></div>
+        <div ui-view="content" flex flex-order="2"></div>
+    </div>
+</div>
+
+<div ui-view="footer" ng-if="layout.footer"></div>

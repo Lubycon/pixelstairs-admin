@@ -1,0 +1,33 @@
+[ui-view='header'] {
+
+}
+
+#container {
+    min-height: 100vh;
+    background: #eeeeee;
+
+    div[ui-view="aside"] {
+        width: $aside-width;
+        min-height: 100%;
+    }
+    div[ui-view="content"] {
+        min-height: 100%;
+    }
+
+    &.with-header {
+        min-height: calc(100vh - 64px);
+        div[ui-view="aside"] {
+            margin-top: 64px;
+            position: relative;
+        }
+        div[ui-view="content"] {
+            min-height: 100%;
+            margin-top: 64px;
+            position: relative;
+        }
+    }
+}
+
+[ui-view='footer'] {
+
+}
