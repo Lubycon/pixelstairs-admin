@@ -7,7 +7,7 @@ export class SigninController {
 
         this.$log = $log;
         this.$state = $state;
-        
+
         this.APIService = APIService;
         this.AuthenticationService = AuthenticationService;
 
@@ -15,9 +15,14 @@ export class SigninController {
             email: null,
             password: null
         };
+
+        this.isBusy = false;
     }
 
     postData() {
+        if(this.isBusy) return false;
+        this.isBusy = true;
+
         let data = angular.copy(this.formData);
         this.APIService.resource('members.signin').post(data)
         .then(res => {
@@ -39,6 +44,7 @@ export class SigninController {
     }
 
     __reject__(err) {
+        this.isBusy = false;
         /*@LOG*/ this.$log.debug(err);
         alert(`[${err.status} ${err.statusText} ] - ${err.data.status.code} ${err.data.status.msg}`);
     }
