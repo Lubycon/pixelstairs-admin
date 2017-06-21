@@ -13,6 +13,9 @@ export function restangularConfig(
     defaultHeaders[CUSTOM_HEADER_PREFIX + 'version'] = APP_VERSION;
     defaultHeaders[CUSTOM_HEADER_PREFIX + 'device'] = 'bs=' + USER_AGENT.browser + ',dvc=' + USER_AGENT.device + ',os=' + USER_AGENT.os;
 
+    defaultHeaders[CUSTOM_HEADER_PREFIX + 'country'] = 'KR';
+    defaultHeaders[CUSTOM_HEADER_PREFIX + 'language'] = 'ko-KR';
+
     if(IS_DEV) {
         defaultHeaders['lubycon-dev'] = DEV_KEY;
     }
