@@ -1,3 +1,58 @@
 .state-signin {
+    #container {
+        @include linearGradient($mine-black, $black);
+    }
 
+    md-card {
+        background-color: transparent;
+        box-shadow: none;
+
+        header {
+            margin-bottom: 50px;
+            .logo {
+                width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        md-card-content {
+            md-input-container {
+                box-sizing: border-box;
+                margin: 0;
+                * {
+                    color: $white;
+                }
+                input {
+                    border-color: $white;
+                }
+                label {
+                    color: $silver-grey;
+                }
+
+                &.md-input-invalid [ng-message] {
+                    text-align: right;
+                }
+            }
+        }
+
+        .md-button {
+            margin: 30px 0;
+            background-color: transparent;
+            border: 1px solid $white;
+            color: $white;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                color: $mine-black;
+                background-color: $white;
+                width: 110%;
+                transform: translateX(-5%);
+            }
+        }
+
+        .hint {
+            text-align: center;
+            color: $white;
+            font-size: 12px;
+        }
+    }
 }

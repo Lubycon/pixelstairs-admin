@@ -1,0 +1,25 @@
+html, body {
+    min-width: 320px;
+    min-height: 100vh;
+    top: auto !important;
+    position: relative !important;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    min-height: 100vh;
+    margin: 0 auto;
+    &.full-width {
+        max-width: 1920px;
+    }
+}
+
+.with-header {
+    .container {
+        min-height: calc(100vh - #{$global-header-height});
+    }
+}

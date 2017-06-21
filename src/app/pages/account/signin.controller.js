@@ -2,6 +2,13 @@ export class SigninController {
     constructor() {
         'ngInject';
 
-        console.log(1);
+        this.formData = {
+            email: null,
+            password: null
+        };
+    }
+
+    postData() {
+        console.log(this.formData);
     }
 }

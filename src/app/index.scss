@@ -7,7 +7,7 @@
 // bower:scss
 // endbower
 
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,700,700italic,400italic);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:200,500|Roboto:200,500);
 
 @font-face {
   font-family: 'Material Icons';
@@ -47,7 +47,8 @@
 }
 
 html {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 200;
 }
 
 [layout=row] {

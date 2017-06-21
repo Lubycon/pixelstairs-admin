@@ -7,6 +7,7 @@ import { locationConfig } from './location.config';
 import { languageConfig } from './language.config';
 import { restangularConfig } from './restangular.config';
 import { logConfig } from './log.config';
+import { materialConfig } from './material.config';
 
 angular
     .module('app.config', [
@@ -25,4 +26,6 @@ angular
     .config(restangularConfig)
 
     .config(logConfig)
+
+    .config(materialConfig)
     ;
