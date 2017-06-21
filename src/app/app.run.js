@@ -6,4 +6,12 @@ export function run (
     'ngInject';
 
     $rootScope.deviceInfo = USER_AGENT;
+
+    $rootScope.$on('$stateChangeSuccess', (
+        event, toState, toParams, fromState, fromParams
+    ) => {
+        StateAuthenticationService.detect(toState);
+
+        $anchorScroll();
+    });
 }

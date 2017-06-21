@@ -7,7 +7,8 @@ export function routerConfig ($stateProvider) {
             url: '/',
             templateUrl: 'app/pages/main/main.tmpl.html',
             controller: 'MainController',
-            controllerAs: 'MainCtrl'
+            controllerAs: 'MainCtrl',
+            authenticate: 'member'
         })
         ;
 }

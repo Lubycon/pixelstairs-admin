@@ -15,7 +15,6 @@ angular
     .module('app', [
         'ngAnimate', // animate.css MODULE
         'ngCookies', // COOKIE STORE MODULE
-        'ngTouch', // TOUCH MODULE FOR MOBILE MOBULE
         'ngSanitize', // STRING TO HTML CONVERTING MODULE
         'ngMessages', // FORM ERROR OR INFO MESSAGE MODULE
         'ngAria', // FORM CONTROL MODULE
