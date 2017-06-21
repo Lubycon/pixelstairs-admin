@@ -24,11 +24,6 @@ export class AppSettingService {
         /*LOG*/ this.$log.debug('App Setting init start...');
         let defer = this.$q.defer();
 
-        const NEW_DATA = window.client_geo_location;
-        const STORED_DATA = this.CookieService.get('setting');
-
-        this.__setSetting__(NEW_DATA, STORED_DATA);
-
         defer.resolve();
 
         return defer.promise;

@@ -18,11 +18,5 @@ angular
         key: 'ko-KR'
     }])
 
-    .constant('SNS_KEYS', {
-
-    })
-
-    .constant('MAIN_GRID_INIT', 'grid')
-
     .constant('USER_DEFAULT_PROFILE_IMG', 'https://s3-ap-northeast-1.amazonaws.com/pixelstairsdev/user/default_profile_image.png')
     ;
