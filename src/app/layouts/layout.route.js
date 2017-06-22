@@ -16,13 +16,13 @@ export function routerConfig ($stateProvider) {
                     controller: 'HeaderController',
                     controllerAs: 'GlobalHeaderCtrl'
                 },
+                aside: {
+                    templateUrl: 'app/components/aside/global-menu.tmpl.html',
+                    controller: 'GlobalMenuController',
+                    controllerAs: 'GlobalMenuCtrl'
+                },
                 content: {
                     template: '<div ui-view></div>'
-                },
-                footer: {
-                    templateUrl: 'app/components/footer/footer.tmpl.html',
-                    controller: 'FooterController',
-                    controllerAs: 'GlobalFooterCtrl'
                 }
             }
         })

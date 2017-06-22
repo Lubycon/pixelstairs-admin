@@ -4,7 +4,7 @@
 
 #container {
     min-height: 100vh;
-    background: #eeeeee;
+    background: $dove-grey;
 
     div[ui-view="aside"] {
         width: $aside-width;
@@ -15,14 +15,15 @@
     }
 
     &.with-header {
-        min-height: calc(100vh - 64px);
+        padding-top: $global-header-height;
+        min-height: calc(100vh - #{$global-header-height});
+
         div[ui-view="aside"] {
-            margin-top: 64px;
             position: relative;
+            min-height: calc(100vh - #{$global-header-height});
         }
         div[ui-view="content"] {
-            min-height: 100%;
-            margin-top: 64px;
+            min-height: calc(100vh - #{$global-header-height});
             position: relative;
         }
     }

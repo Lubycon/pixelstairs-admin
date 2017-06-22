@@ -1,4 +1,5 @@
 import { HeaderController } from './header/header.controller';
+import { GlobalMenuController } from './aside/global-menu.controller';
 import { FooterController } from './footer/footer.controller';
 
 angular
@@ -6,5 +7,6 @@ angular
 
     ])
     .controller('HeaderController', HeaderController)
+    .controller('GlobalMenuController', GlobalMenuController)
     .controller('FooterController', FooterController)
     ;

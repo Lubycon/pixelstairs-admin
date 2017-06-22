@@ -1,0 +1,75 @@
+.aside-main-menu {
+    position: fixed;
+    background-color: $mine-black;
+    height: 100%;
+    overflow-y: scroll;
+
+    ul {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: $aside-width;
+
+        li {
+            .md-button {
+                width: 100%;
+                margin: 0;
+                padding: 10px 22px;
+                text-align: left;
+                text-transform: none;
+                box-shadow: none;
+                transition: all 0.3s ease-out;
+                color: $grey;
+
+                &:hover {
+                    background-color: transparent;
+                    color: $light-grey;
+                }
+                &:focus {
+                    background-color: transparent;
+                }
+
+                &.selected, &.open {
+                    color: $white;
+                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                }
+
+                * {
+                    vertical-align: middle;
+                }
+
+                i {
+                    margin-top: -3px;
+                    margin-right: 17px;
+                    font-size: 25px;
+                }
+                span {
+                    font-size: 14px;
+                }
+                i.open-icon {
+                    position: absolute;
+                    font-size: 14px;
+                    top: 50%;
+                    right: 30px;
+                    transform: translateY(-50%);
+                    margin: 0;
+                }
+            }
+
+            ul.sub-menu {
+                li {
+                    a {
+                        padding: 0 0 0 68px;
+                    }
+                    * {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
