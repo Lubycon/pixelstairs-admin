@@ -17,34 +17,35 @@ export class GlobalMenuController {
 
     init() {
         this.currentStateCheck(this.HistoryService.get().to);
-        this.$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-            currentStateCheck(toState);
+        this.$rootScope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams) => {
+            this.currentStateCheck(toState);
         });
 
-        this.__setMenuHeight__();
+        this.__calcMenuHeight__();
     }
 
     currentStateCheck(state) {
         this.menuList.forEach(function(v) {
+            v.selected = v.open = false;
             if(!v.submenu) {
-                v.selected = true;
-                return true;
+                v.selected = v.link === state.name;
             }
             else {
                 v.submenu.forEach(function(v1) {
+                    v1.selected = false;
                     v1.selected = v1.link === state.name;
-                    if(v1.selected) v.open = true;
+                    if(v1.selected) v.open = v.selected = v1.selected;
                 });
             }
         });
     }
 
     /* PRIVATE */
-    __setMenuHeight__() {
+    __calcMenuHeight__() {
         setTimeout(() => {
             const el = angular.element('.sub-menu');
             el.each((i, v) => {
-                this.menuList[i].menuHeight = angular.element(v).find('.sub-menu-wrapper').outerHeight();
+                v.style.height = angular.element(v).find('.sub-menu-wrapper').outerHeight() + 'px';
             });
         });
     }

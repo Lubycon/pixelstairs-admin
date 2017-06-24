@@ -9,7 +9,7 @@ export const APP_GLOBAL_MENU = [{
     icon: 'xi-users',
     submenu: [{
         name: 'Search',
-        link: 'common.default.maind'
+        link: 'common.default.users'
     },{
         name: 'Authentication',
         link: 'common.default.maind'
