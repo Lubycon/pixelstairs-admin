@@ -1,1 +1,29 @@
-<div>USER LIST</div>
+<div layout="column" layout-align="top center" class="container layout-padding">
+    <mdt-table
+        paginated-rows="{
+            isEnabled: true,
+            rowsPerPageValues: [20, 50, 100]
+        }"
+        mdt-row-paginator="UsrListCtrl.getDataCollection(page, pageSize)"
+        table-card="{
+            actionIcons: true,
+            visible: true,
+            columnSelector: true
+        }"
+        mdt-loading-indicator="{
+            color: '#488ccb'
+        }"
+        mdt-row="{
+            'table-row-id-key': 'id',
+            'column-keys': [
+                'id', 'nickname', 'email'
+            ]
+        }"
+    >
+        <mdt-header-row>
+            <mdt-column column-sort="true" align-rule="left">#</mdt-column>
+            <mdt-column column-sort="true" align-rule="left">Name</mdt-column>
+            <mdt-column column-sort="true" align-rule="left">Email</mdt-column>
+        </mdt-header-row>
+    </mdt-table>
+</div>

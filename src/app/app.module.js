@@ -24,6 +24,7 @@ angular
         'toastr', // TOAST
         'ngFileUpload', // FILE UPLOAD MODULE
         'infinite-scroll', // INFINITE SCROLL
+        'mdDataTable', // TABLE MODULE
 
         'app.env', // ENV CONSTANTS
         'app.config', // APP CONFIG MODULE

@@ -4,11 +4,17 @@
     height: 100%;
     overflow-y: scroll;
 
+    .aside-header {
+        height: 100px;
+        background-color: $mint;
+    }
+
     ul {
         position: relative;
         top: 0;
         left: 0;
         width: $aside-width;
+        height: 100%;
 
         li {
             .md-button {

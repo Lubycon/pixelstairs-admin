@@ -22,7 +22,8 @@
     "ng-file-upload-shim": "^12.0.4",
     "ng-file-upload": "^12.0.4",
     "ua-parser-js": "^0.7.12",
-    "xeicon": "^2.3.0"
+    "xeicon": "^2.3.0",
+    "md-data-table": "^2.2.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3"
