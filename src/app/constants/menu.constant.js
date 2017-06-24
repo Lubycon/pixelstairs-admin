@@ -44,4 +44,15 @@ export const APP_GLOBAL_MENU = [{
         name: 'Java',
         link: 'common.default.maind'
     }]
+},{
+    name: 'Server Status',
+    open: false,
+    icon: 'xi-network-server',
+    submenu: [{
+        name: 'Dashboard',
+        link: 'common.default.maind'
+    },{
+        name: 'Traffic',
+        link: 'common.default.maind'
+    }]
 }];

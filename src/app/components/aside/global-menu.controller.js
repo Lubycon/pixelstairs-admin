@@ -20,6 +20,8 @@ export class GlobalMenuController {
         this.$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
             currentStateCheck(toState);
         });
+
+        this.__setMenuHeight__();
     }
 
     currentStateCheck(state) {
@@ -34,6 +36,16 @@ export class GlobalMenuController {
                     if(v1.selected) v.open = true;
                 });
             }
+        });
+    }
+
+    /* PRIVATE */
+    __setMenuHeight__() {
+        setTimeout(() => {
+            const el = angular.element('.sub-menu');
+            el.each((i, v) => {
+                this.menuList[i].menuHeight = angular.element(v).find('.sub-menu-wrapper').outerHeight();
+            });
         });
     }
 }

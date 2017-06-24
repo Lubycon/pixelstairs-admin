@@ -3,22 +3,24 @@
         <li ng-repeat="menu in GlobalMenuCtrl.menuList">
             <md-button
                 ng-click="menu.open = !menu.open"
-                ng-class="{'opened' : menu.open, 'selected': menu.selected}"
+                ng-class="{'opened' : menu.open, 'closed' : !menu.open, 'selected': menu.selected}"
             >
                 <i class="{{menu.icon}}"></i>
                 <span>{{menu.name}}</span>
                 <i
                     ng-if="menu.submenu"
-                    class="open-icon"
-                    ng-class="{'xi-plus' : !menu.open, 'xi-minus' : menu.open}"
+                    class="open-icon xi-plus"
+                    ng-class="{'open' : menu.open}"
                 ></i>
             </md-button>
-            <ul ng-show="menu.open" class="sub-menu">
-                <li ng-repeat="submenu in menu.submenu" ng-class="{'selected' : submenu.selected}">
-                    <md-button ui-sref="{{submenu.link}}" md-no-ink="true">
-                        {{submenu.name}}
-                    </md-button>
-                </li>
+            <ul class="sub-menu" ng-style="{'height': menu.menuHeight}">
+                <div class="sub-menu-wrapper">
+                    <li ng-repeat="submenu in menu.submenu" ng-class="{'selected' : submenu.selected}">
+                        <md-button ui-sref="{{submenu.link}}" md-no-ink="true">
+                            {{submenu.name}}
+                        </md-button>
+                    </li>
+                </div>
             </ul>
         </li>
     </ul>

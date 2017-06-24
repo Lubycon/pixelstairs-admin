@@ -51,13 +51,35 @@
                     font-size: 14px;
                     top: 50%;
                     right: 30px;
-                    transform: translateY(-50%);
                     margin: 0;
+                    transform: translateY(-50%) rotateZ(0);
+                    transition: transform 0.2s ease-out;
+                }
+
+                &.opened {
+                    i.open-icon {
+                        transform: translateY(-50%) rotateZ(45deg);
+                    }
+                }
+                &.closed {
+                    &+.sub-menu {
+                        height: 0 !important;
+                    }
                 }
             }
 
             ul.sub-menu {
+                background-color: darken($mine-black, 5%);
+                overflow-y: hidden;
+                transition: all 0.2s ease-out;
+                .sub-menu-wrapper {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                }
                 li {
+                    position: relative;
                     a {
                         padding: 0 0 0 68px;
                     }
