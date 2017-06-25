@@ -23,7 +23,7 @@ export const APP_GLOBAL_MENU = [{
     icon: 'xi-library-image',
     submenu: [{
         name: 'Search',
-        link: 'common.default.maind'
+        link: 'common.default.contents'
     },{
         name: 'Detail',
         link: 'common.default.maind'

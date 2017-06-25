@@ -1,0 +1,37 @@
+<div layout="column" layout-align="top center" class="container layout-padding">
+    <mdt-table
+        class="full-width"
+        paginated-rows="{
+            isEnabled: true,
+            rowsPerPageValues: [20, 50, 100]
+        }"
+        mdt-row-paginator="ContentListCtrl.getDataCollection(page, pageSize)"
+        table-card="{
+            actionIcons: true,
+            visible: true,
+            columnSelector: true
+        }"
+        mdt-loading-indicator="{
+            color: '#009688'
+        }"
+        mdt-row="{
+            'table-row-id-key': 'id',
+            'column-keys': [
+                'id', 'title', 'user.nickname', 'counts.view', 'counts.like', 'createdAt'
+            ]
+        }"
+    >
+        <mdt-header-row>
+            <mdt-column column-sort="true" align-rule="left">#</mdt-column>
+            <mdt-column column-sort="false" align-rule="left">Title</mdt-column>
+            <mdt-column column-sort="true" align-rule="left">Author</mdt-column>
+            <mdt-column column-sort="true" align-rule="left">View</mdt-column>
+            <mdt-column column-sort="true" align-rule="left">Like</mdt-column>
+            <mdt-column column-sort="true" align-rule="left">Created</mdt-column>
+        </mdt-header-row>
+
+        <mdt-custom-cell column-key="createdAt">
+            {{value | date:'yyyy-MM-dd'}}
+        </mdt-custom-cell>
+    </mdt-table>
+</div>
