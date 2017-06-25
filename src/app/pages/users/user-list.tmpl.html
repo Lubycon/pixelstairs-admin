@@ -17,7 +17,7 @@
         mdt-row="{
             'table-row-id-key': 'id',
             'column-keys': [
-                'id', 'profileImg', 'nickname', 'email'
+                'id', 'profileImg', 'nickname', 'email', 'status'
             ]
         }"
     >
@@ -26,11 +26,18 @@
             <mdt-column column-sort="false" align-rule="left">#</mdt-column>
             <mdt-column column-sort="true" align-rule="left">Name</mdt-column>
             <mdt-column column-sort="true" align-rule="left">Email</mdt-column>
+            <mdt-column column-sort="false" align-rule="left">Status</mdt-column>
         </mdt-header-row>
 
         <mdt-custom-cell column-key="profileImg" html-content="true" class="user-profile-cell">
             <span class="user-profile-cell">
                 <img ng-src="{{value}}" alt="{{'user-profile-' + rowId}}">
+            </span>
+        </mdt-custom-cell>
+
+        <mdt-custom-cell column-key="status">
+            <span class="badge" ng-class="{'good': value === 'active', 'warning': value === 'inactive'}">
+                {{value}}
             </span>
         </mdt-custom-cell>
     </mdt-table>

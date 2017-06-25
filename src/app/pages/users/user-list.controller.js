@@ -48,6 +48,10 @@ export class UserListController {
         });
     }
 
+    onClick() {
+        console.log(1);
+    }
+
     __bindToTemp__(res) {
         if(!this._tempList) this._tempList = { data: [], totalCount: 0 };
         if(res.result && res.result.users) {
