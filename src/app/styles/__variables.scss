@@ -1,38 +1,4 @@
-/* @MIXIN */
-
-@mixin ellipsis {
-    overflow: hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-}
-
-@mixin floatToCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-
-@mixin circleFrame($length) {
-    width: $length;
-    height: $length;
-    border-radius: 50%;
-    overflow: hidden;
-    background: {
-        size: cover;
-        position: 50% 50%;
-    }
-
-    img {
-        width: 100%;
-    }
-}
-
-/* @METHOD */
-
-/* @FONT */
-
-/* @VARIABLES */
+/* @COMPONENTS */
 $aside-width: 250px;
 $global-header-height: 64px;
 

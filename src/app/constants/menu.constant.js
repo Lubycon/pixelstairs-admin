@@ -11,6 +11,9 @@ export const APP_GLOBAL_MENU = [{
         name: 'Search',
         link: 'common.default.users'
     },{
+        name: 'Employees',
+        link: 'common.default.users1'
+    },{
         name: 'Authentication',
         link: 'common.default.maind'
     }]
@@ -20,7 +23,7 @@ export const APP_GLOBAL_MENU = [{
     icon: 'xi-library-image',
     submenu: [{
         name: 'Search',
-        link: 'common.default.maind'
+        link: 'common.default.contents'
     },{
         name: 'Detail',
         link: 'common.default.maind'
@@ -55,4 +58,36 @@ export const APP_GLOBAL_MENU = [{
         name: 'Traffic',
         link: 'common.default.maind'
     }]
+}];
+
+export const APP_HEADER_MENU = [{
+    icon: 'xi-presentation',
+    name: 'Dashboard',
+    link: 'common.default.main'
+},{
+    icon: 'xi-branch',
+    name: '[Test] Branch',
+    link: 'common.default.main'
+},{
+    icon: 'xi-pull-requests',
+    name: '[Test] Pull Request',
+    link: 'common.default.main'
+},{
+    icon: 'xi-merge',
+    name: '[Test] Merge',
+    link: 'common.default.main'
+}];
+
+export const APP_USER_MENU = [{
+    icon: 'xi-presentation',
+    name: 'Dashboard',
+    link: 'common.default.main'
+},{
+    icon: 'xi-branch',
+    name: '[Test] Branch',
+    link: 'common.default.main'
+},{
+    icon: 'xi-pull-requests',
+    name: '[Test] Pull Request',
+    link: 'common.default.main'
 }];

@@ -1,0 +1,12 @@
+mdt-table {
+    table {
+        thead {
+
+        }
+        tbody {
+            .user-profile-cell {
+                @include circleFrame(30px);
+            }
+        }
+    }
+}

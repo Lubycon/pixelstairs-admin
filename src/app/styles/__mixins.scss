@@ -8,3 +8,32 @@
     background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
+
+@mixin ellipsis {
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+@mixin floatToCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin circleFrame($length) {
+    display: inline-block;
+    width: $length;
+    height: $length;
+    border-radius: 50%;
+    overflow: hidden;
+    background: {
+        size: cover;
+        position: 50% 50%;
+    }
+
+    img {
+        width: 100%;
+    }
+}
