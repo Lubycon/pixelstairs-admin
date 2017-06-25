@@ -2,15 +2,15 @@
 
 }
 
-#container {
+#container.default {
     min-height: 100vh;
-    background: $light-grey;
 
     div[ui-view="aside"] {
         width: $aside-width;
         min-height: 100%;
     }
     div[ui-view="content"] {
+        background: $light-grey;
         min-height: 100%;
     }
 
