@@ -7,6 +7,20 @@
     .aside-header {
         height: 100px;
         background-color: $mint;
+        * {
+            color: $white;
+        }
+
+        .user-basic-info {
+            .user-profile {
+                @include circleFrame(35px);
+                margin-right: 15px;
+            }
+        }
+
+        .user-status {
+
+        }
     }
 
     ul {

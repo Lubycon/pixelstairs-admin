@@ -1,7 +1,7 @@
 export class GlobalMenuController {
     constructor(
         $log, $rootScope, APP_GLOBAL_MENU,
-        HistoryService
+        HistoryService, ImageService
     ) {
         'ngInject';
 
@@ -10,6 +10,8 @@ export class GlobalMenuController {
 
         this.HistoryService = HistoryService;
 
+        this.member = $rootScope.member;
+        this.memberFace = ImageService.getUserProfile(this.member.profileImg);
         this.menuList = APP_GLOBAL_MENU;
 
         (this.init)();

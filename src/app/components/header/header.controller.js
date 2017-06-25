@@ -1,7 +1,8 @@
 export class HeaderController {
     constructor(
         $rootScope, $log,
-        AuthenticationService, ImageService
+        AuthenticationService, ImageService,
+        APP_HEADER_MENU, APP_USER_MENU
     ) {
         'ngInject';
 
@@ -18,37 +19,8 @@ export class HeaderController {
             null;
 
 
-        this.linkMenuList = [{
-            icon: 'xi-presentation',
-            name: 'Dashboard',
-            link: 'common.default.main'
-        },{
-            icon: 'xi-branch',
-            name: '[Test] Branch',
-            link: 'common.default.main'
-        },{
-            icon: 'xi-pull-requests',
-            name: '[Test] Pull Request',
-            link: 'common.default.main'
-        },{
-            icon: 'xi-merge',
-            name: '[Test] Merge',
-            link: 'common.default.main'
-        }];
-
-        this.userMenuList = [{
-            icon: 'xi-presentation',
-            name: 'Dashboard',
-            link: 'common.default.main'
-        },{
-            icon: 'xi-branch',
-            name: '[Test] Branch',
-            link: 'common.default.main'
-        },{
-            icon: 'xi-pull-requests',
-            name: '[Test] Pull Request',
-            link: 'common.default.main'
-        }];
+        this.linkMenuList = APP_HEADER_MENU;
+        this.userMenuList = APP_USER_MENU;
     }
 
     userMenuTrigger($mdOpenMenu, event) {

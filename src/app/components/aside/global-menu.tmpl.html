@@ -1,6 +1,17 @@
 <div class="aside-main-menu">
-    <div class="aside-header">
-        
+    <div class="aside-header" layout="row" layout-align="center center">
+        <div class="user-basic-info" layout="row" layout-align="center center">
+            <div class="user-profile">
+                <img ng-src="{{GlobalMenuCtrl.memberFace}}" alt="{{'user-profile-' + GlobalMenuCtrl.member.id}}">
+            </div>
+            <div class="user-info">
+                <h4>{{GlobalMenuCtrl.member.nickname}}</h4>
+                <h6>{{GlobalMenuCtrl.member.email}}</h6>
+            </div>
+        </div>
+        <div class="user-status">
+
+        </div>
     </div>
     <ul class="main-menu">
         <li ng-repeat="menu in GlobalMenuCtrl.menuList">
