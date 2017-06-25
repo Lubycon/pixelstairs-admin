@@ -2,11 +2,13 @@
 export class UserListController {
     constructor (
         $rootScope, $scope, $log, $timeout, $location,
-        APIService, CookieService, Restangular
+        Restangular, APIService, ImageService
     ) {
         'ngInject';
 
         this.Restangular = Restangular;
+
+        this.ImageService = ImageService;
 
         this.query = {
             pageIndex: $location.search().pageIndex || 1,
@@ -23,10 +25,14 @@ export class UserListController {
     getDataCollection(pageIndex, pageSize) {
         this.query.pageIndex = pageIndex || this.query.pageIndex;
         this.query.pageSize = pageSize || this.query.pageSize;
-        
+
         return this.Restangular.oneUrl('admin','https://apilocal.pixelstairs.com/admin/members')
         .customGET('', this.query).then(res => {
             if(res.result && res.result.users) {
+                res.result.users.forEach(v => {
+                    v.profileImg = this.ImageService.getUserProfile(v.profileImg);
+                });
+
                 this.__bindToTemp__(res);
                 return {
                     results: res.result.users,
