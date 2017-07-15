@@ -31,7 +31,12 @@
         </mdt-header-row>
 
         <mdt-custom-cell column-key="user.nickname">
-            <span ng-click="showUserModal()">{{value}}</span>
+            <a
+                class="cell-btn"
+                ng-click="clientScope.ContentListCtrl.showUserModal()"
+            >
+                {{value}}
+            </a>
         </mdt-custom-cell>
         <mdt-custom-cell column-key="createdAt">
             {{value | date:'yyyy-MM-dd'}}

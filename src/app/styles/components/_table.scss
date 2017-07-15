@@ -7,6 +7,20 @@ mdt-table {
             .user-profile-cell {
                 @include circleFrame(30px);
             }
+
+            .cell-btn {
+                position: relative;
+                display: inline-block;
+                &::after {
+                    position: absolute;
+                    width: 110%;
+                    height: 1px;
+                    background-color: $silver-grey;
+                    content: '';
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
         }
     }
 }

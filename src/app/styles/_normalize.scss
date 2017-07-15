@@ -50,7 +50,7 @@ article, aside, hgroup, header, footer, figure, figcaption, nav, section {
 body, h1, h2, h3, h4, h5, h6, div, p, ul, ol, dl, li, dt, dd, address, article, aside, hgroup, header, footer, figure, figcaption, nav, section {
     margin: 0px;
     padding: 0px;
-    color: #444;
+    color: #212121;
 }
 
 li {
@@ -63,13 +63,13 @@ img {
 
 a {
     text-decoration: none;
-    color: #444;
+    color: #212121;
     margin: 0px;
     padding: 0px;
     cursor: pointer;
     transition: all 0.3s;
     &:hover, &:focus {
-        color: #444;
+        color: #212121;
         opacity: 0.6;
         text-decoration: none;
     }

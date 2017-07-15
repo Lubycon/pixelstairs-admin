@@ -54,6 +54,7 @@ export class ContentListController {
     }
 
     showUserModal() {
+        console.log(1);
         this.modalStatus.user = true;
     }
     hideUserModal() {
