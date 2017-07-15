@@ -1,7 +1,7 @@
 <md-dialog class="delivery-price-modal">
     <md-toolbar flex-order="1">
         <div class="md-toolbar-tools" flex>
-            <h2>배송사 요율표</h2>
+            <h2>유저 정보</h2>
             <span flex></span>
             <md-button class="md-icon-button" ng-click="cancel()">
                 <md-icon><i class="xi-close"></i></md-icon>
@@ -9,21 +9,12 @@
         </div>
     </md-toolbar>
     <md-dialog-content flex-order="2">
-        <div layout="column" class="delivery-price-table" flex>
-            <div layout="row" class="delivery-price-column header">
-                <div class="title">{{'PRODUCT.WEIGHT' | translate}} (kg)</div>
-                <div class="value">{{'PRODUCT.PRICE' | translate}}</div>
-            </div>
-            <div layout="row" ng-repeat="value in data" class="delivery-price-column" flex>
-                <div class="title">{{value.maxWeight}}</div>
-                <div class="value">{{value.price | intCommaFilter}}</div>
-            </div>
-        </div>
+        Content
     </md-dialog-content>
     <md-dialog-action flex-order="3">
         <div layout="row">
-            <md-button md-colors="{background: 'blue-grey'}" ng-click="cancel()" flex>
-                {{'FORM.CLOSE' | translate}}
+            <md-button ng-click="cancel()" flex>
+                닫기
             </md-button>
         </div>
     </md-dialog-action>

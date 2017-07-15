@@ -17,7 +17,7 @@
         mdt-row="{
             'table-row-id-key': 'id',
             'column-keys': [
-                'id', 'title', 'user.nickname', 'counts.view', 'counts.like', 'createdAt'
+                'id', 'title', 'user', 'counts.view', 'counts.like', 'createdAt'
             ]
         }"
     >
@@ -30,12 +30,12 @@
             <mdt-column column-sort="true" align-rule="left">Created</mdt-column>
         </mdt-header-row>
 
-        <mdt-custom-cell column-key="user.nickname">
+        <mdt-custom-cell column-key="user">
             <a
                 class="cell-btn"
-                ng-click="clientScope.ContentListCtrl.showUserModal()"
+                ng-click="clientScope.ContentListCtrl.showUserModal(value.id)"
             >
-                {{value}}
+                {{value.nickname}}
             </a>
         </mdt-custom-cell>
         <mdt-custom-cell column-key="createdAt">

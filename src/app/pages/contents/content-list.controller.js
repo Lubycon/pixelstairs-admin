@@ -1,10 +1,13 @@
 
 export class ContentListController {
     constructor (
-        $rootScope, $scope, $log, $timeout, $location,
+        $rootScope, $scope, $log, $location,
+        $mdDialog,
         APIService, ImageService
     ) {
         'ngInject';
+
+        this.$mdDialog = $mdDialog;
 
         this.APIService = APIService;
         this.ImageService = ImageService;
@@ -53,9 +56,19 @@ export class ContentListController {
         });
     }
 
-    showUserModal() {
-        console.log(1);
-        this.modalStatus.user = true;
+    showUserModal(id) {
+        console.log('open -> ', id);
+        this.$mdDialog.show({
+            controller: 'UserInfoModalController',
+            templateUrl: 'app/components/modals/user-info-modal/user-info-modal.tmpl.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose:true,
+            locals: {
+                data: {
+                    id: id
+                }
+            }
+        });
     }
     hideUserModal() {
         this.modalStatus.user = false;
