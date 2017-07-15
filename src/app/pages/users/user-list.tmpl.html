@@ -31,7 +31,7 @@
 
         <mdt-custom-cell column-key="profileImg" html-content="true" class="user-profile-cell">
             <span class="user-profile-cell">
-                <img ng-src="{{value}}" alt="{{'user-profile-' + rowId}}">
+                <img ng-src="{{clientScope.UsrListCtrl.ImageService.getUserProfile(value)}}" alt="{{'user-profile-' + rowId}}">
             </span>
         </mdt-custom-cell>
 

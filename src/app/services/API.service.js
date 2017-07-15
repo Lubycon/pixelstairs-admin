@@ -3,26 +3,27 @@ const API_LIST = {
     members: () => {
         const prefix = 'members';
         return {
-            signin: `${prefix}/signin`,
-            signout: `${prefix}/signout`,
-            signup: `${prefix}/signup`,
-            signdrop: `${prefix}/signdrop`,
+            signin: `v1/${prefix}/signin`,
+            signout: `v1/${prefix}/signout`,
+            signup: `v1/${prefix}/signup`,
+            signdrop: `v1/${prefix}/signdrop`,
 
-            simple: `${prefix}/simple`,
-            detail: `${prefix}/{id}/detail`,
+            list: `admin/${prefix}`,
+            simple: `v1/${prefix}/simple`,
+            detail: `admin/${prefix}/{id}/detail`,
 
-            isExist: `${prefix}/isexist`,
+            isExist: `v1/${prefix}/isexist`,
             pwd: {
-                mail: `${prefix}/password/mail`,
-                reset: `${prefix}/password/reset`
+                mail: `v1/${prefix}/password/mail`,
+                reset: `v1/${prefix}/password/reset`
             }
         };
     },
     contents: () => {
         const prefix = 'contents';
         return {
-            list: `${prefix}`,
-            detail: `${prefix}/{id}`
+            list: `v1/${prefix}`,
+            detail: `admin/${prefix}/{id}`
         };
     },
     certs: () => {
@@ -36,12 +37,6 @@ const API_LIST = {
             password: {
                 code: `${prefix}/password/code`
             }
-        };
-    },
-    tracker: () => {
-        const prefix = 'tracker';
-        return {
-            tracker: ''
         };
     },
     quotes: () => {

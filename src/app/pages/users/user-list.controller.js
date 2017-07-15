@@ -1,13 +1,15 @@
 
 export class UserListController {
     constructor (
-        $rootScope, $scope, $log, $timeout, $location,
-        Restangular, APIService, ImageService
+        $rootScope, $scope, $log, $location,
+        $mdDialog,
+        APIService, ImageService
     ) {
         'ngInject';
 
-        this.Restangular = Restangular;
+        this.$mdDialog = $mdDialog;
 
+        this.APIService = APIService;
         this.ImageService = ImageService;
 
         this.query = {
@@ -26,13 +28,9 @@ export class UserListController {
         this.query.pageIndex = pageIndex || this.query.pageIndex;
         this.query.pageSize = pageSize || this.query.pageSize;
 
-        return this.Restangular.oneUrl('admin','https://apilocal.pixelstairs.com/admin/members')
-        .customGET('', this.query).then(res => {
+        return this.APIService.resource('members.list').get(this.query)
+        .then(res => {
             if(res.result && res.result.users) {
-                res.result.users.forEach(v => {
-                    v.profileImg = this.ImageService.getUserProfile(v.profileImg);
-                });
-
                 this.__bindToTemp__(res);
                 return {
                     results: res.result.users,
@@ -48,8 +46,17 @@ export class UserListController {
         });
     }
 
-    onClick() {
-
+    showUserModal(id) {
+        this.$mdDialog.show({
+            controller: 'UserInfoModalController',
+            controllerAs: 'UsrInfoModal',
+            templateUrl: 'app/components/modals/user-info-modal/user-info-modal.tmpl.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose: true,
+            locals: {
+                userId: id
+            }
+        });
     }
 
     __bindToTemp__(res) {
