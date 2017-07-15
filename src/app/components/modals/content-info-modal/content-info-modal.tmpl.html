@@ -1,4 +1,4 @@
-<md-dialog class="delivery-price-modal">
+<md-dialog class="content-info-modal" flex="80">
     <md-toolbar flex-order="1">
         <div class="md-toolbar-tools" flex>
             <h2>아트워크 정보</h2>
@@ -9,7 +9,35 @@
         </div>
     </md-toolbar>
     <md-dialog-content flex-order="2">
-        {{ContentInfoModal.data}}
+        <form
+            name="ContentInfoModal.form"
+            ng-init="ContentInfoModal.form = ContentInfoModal.form"
+        >
+            <div class="layout-padding" layout="column">
+                <div layout="row">
+                    <div class="content-img-wrapper" flex="30">
+                        <img
+                            ng-src="{{ContentInfoModal.contentImage}}"
+                            alt="{{'content-image-' + ContentInfoModal.data.id}}"
+                        >
+                    </div>
+                    <div layout="column" class="fieldset" flex>
+                        <div layout="row">
+                            <md-input-container flex>
+                                <label>아트워크ID</label>
+                                <input readonly type="text" ng-model="ContentInfoModal.data.id">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>제목</label>
+                                <input readonly type="text" ng-model="ContentInfoModal.data.title">
+                            </md-input-container>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
     </md-dialog-content>
     <md-dialog-action flex-order="3">
         <div layout="row">
