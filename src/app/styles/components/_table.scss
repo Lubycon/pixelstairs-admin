@@ -13,12 +13,10 @@ mdt-table {
                 display: inline-block;
                 &::after {
                     position: absolute;
-                    width: 110%;
+                    width: 100%;
                     height: 1px;
                     background-color: $silver-grey;
                     content: '';
-                    left: 50%;
-                    transform: translateX(-50%);
                 }
             }
         }

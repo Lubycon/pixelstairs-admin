@@ -1,19 +1,19 @@
 <md-dialog class="delivery-price-modal">
     <md-toolbar flex-order="1">
         <div class="md-toolbar-tools" flex>
-            <h2>유저 정보</h2>
+            <h2>아트워크 정보</h2>
             <span flex></span>
-            <md-button class="md-icon-button" ng-click="UsrInfoModal.close()">
+            <md-button class="md-icon-button" ng-click="ContentInfoModal.close()">
                 <md-icon><i class="xi-close"></i></md-icon>
             </md-button>
         </div>
     </md-toolbar>
     <md-dialog-content flex-order="2">
-        Content
+        {{ContentInfoModal.data}}
     </md-dialog-content>
     <md-dialog-action flex-order="3">
         <div layout="row">
-            <md-button ng-click="UsrInfoModal.close()" flex>
+            <md-button ng-click="ContentInfoModal.close()" flex>
                 닫기
             </md-button>
         </div>

@@ -17,11 +17,6 @@ export class ContentListController {
             pageSize: $location.search().PageSize || 20
         };
 
-        this.modalStatus = {
-            content: false,
-            user: false
-        };
-
         (this.init)();
     }
 
@@ -57,28 +52,29 @@ export class ContentListController {
     }
 
     showUserModal(id) {
-        console.log('open -> ', id);
         this.$mdDialog.show({
             controller: 'UserInfoModalController',
+            controllerAs: 'UsrInfoModal',
             templateUrl: 'app/components/modals/user-info-modal/user-info-modal.tmpl.html',
             parent: angular.element(document.body),
-            clickOutsideToClose:true,
+            clickOutsideToClose: true,
             locals: {
-                data: {
-                    id: id
-                }
+                userId: id
             }
         });
     }
-    hideUserModal() {
-        this.modalStatus.user = false;
-    }
 
-    showContentModal() {
-        this.modalStatus.content = true;
-    }
-    hideContentModal() {
-        this.modalStatus.content = false;
+    showContentModal(id) {
+        this.$mdDialog.show({
+            controller: 'ContentInfoModalController',
+            controllerAs: 'ContentInfoModal',
+            templateUrl: 'app/components/modals/content-info-modal/content-info-modal.tmpl.html',
+            parent: angular.element(document.body),
+            clickOutsideToClose: true,
+            locals: {
+                contentId: id
+            }
+        });
     }
 
     __bindToTemp__(res) {

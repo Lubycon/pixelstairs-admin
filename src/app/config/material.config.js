@@ -1,6 +1,8 @@
 export function materialConfig($mdAriaProvider, $mdThemingProvider) {
     'ngInject';
 
+    $mdAriaProvider.disableWarnings();
+
     // DEFINE COLOR PALETTE
     $mdThemingProvider.definePalette('mint', {
         '50': 'E0F2F1',
