@@ -71,6 +71,7 @@ export class ContentListController {
             templateUrl: 'app/components/modals/content-info-modal/content-info-modal.tmpl.html',
             parent: angular.element(document.body),
             clickOutsideToClose: true,
+            disableParentScroll: true,
             locals: {
                 contentId: id
             }

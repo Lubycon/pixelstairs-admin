@@ -46,10 +46,13 @@ form {
         legend {
             color: $mine-black;
             font-size: 20px;
-            font-weight: 600;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid $light-grey;
+            font-weight: bold;
+            margin: 30px 0 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed $light-grey;
+            &:first-child {
+                margin-top: 0;
+            }
         }
 
         .fieldset-hint {
@@ -90,11 +93,8 @@ form {
             bottom: 7px;
             opacity: 1;
         }
-        .new-category-wrap {
-            margin-bottom: 10px;
-            md-input-container {
-                margin-bottom: 0;
-            }
+
+        .without-error {
             .md-errors-spacer {
                 display: none;
             }
@@ -102,18 +102,6 @@ form {
     }
 }
 
-// MODAL
-md-dialog {
-    md-toolbar {
-        .md-toolbar-tools {
-            background-color: $mine-black;
-            color: $white;
-        }
-    }
-}
-
-// BUTTONS
-md-button,md-button.md-raised,
-.md-button, .md-button.md-raised {
-
+.no-resize {
+    resize: none;
 }

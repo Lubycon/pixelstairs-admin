@@ -1,0 +1,15 @@
+.md-dialog-is-showing {
+    overflow: hidden;
+}
+
+// MODAL
+md-dialog {
+    md-toolbar {
+        .md-toolbar-tools {
+            background-color: $mint;
+            * {
+                color: $white;
+            }
+        }
+    }
+}

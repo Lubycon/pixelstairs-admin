@@ -22,17 +22,67 @@
                         >
                     </div>
                     <div layout="column" class="fieldset" flex>
+                        <!-- ARTWORK DATA START -->
+                        <legend>아트워크 데이터</legend>
                         <div layout="row">
-                            <md-input-container flex>
+                            <md-input-container flex class="without-error">
+                                <label>생성일</label>
+                                <input readonly type="text" ng-model="ContentInfoModal.data.createdAt">
+                            </md-input-container>
+                            <md-input-container flex class="without-error">
+                                <label>최근 업데이트일</label>
+                                <input readonly type="text" ng-model="ContentInfoModal.data.updatedAt">
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container flex class="without-error">
                                 <label>아트워크ID</label>
                                 <input readonly type="text" ng-model="ContentInfoModal.data.id">
                             </md-input-container>
-                            <md-input-container flex>
+                            <md-input-container flex class="without-error">
                                 <label>제목</label>
                                 <input readonly type="text" ng-model="ContentInfoModal.data.title">
                             </md-input-container>
                         </div>
-                        <div></div>
+                        <div layout="row">
+                            <md-input-container flex class="without-error md-input-has-value">
+                                <label>태그</label>
+                                <md-chips>
+                                    <md-chip ng-repeat="tag in ContentInfoModal.data.hashTags">{{tag}}</md-chip>
+                                </md-chips>
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container flex class="without-error">
+                                <label>설명</label>
+                                <textarea readonly ng-model="ContentInfoModal.data.description" class="no-resize"></textarea>
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container flex class="without-error">
+                                <label>좋아요 수</label>
+                                <input readonly type="text" ng-model="ContentInfoModal.data.counts.like">
+                            </md-input-container>
+                            <md-input-container flex class="without-error">
+                                <label>조회 수</label>
+                                <input readonly type="text" ng-model="ContentInfoModal.data.counts.view">
+                            </md-input-container>
+                        </div>
+                        <!-- ARTWORK DATA END -->
+
+                        <!-- CREATOR DATA START -->
+                        <legend>크리에이터 데이터</legend>
+                        <div layout="row">
+                            <md-input-container flex class="without-error">
+                                <label>유저ID</label>
+                                <input readonly type="text" ng-model="ContentInfoModal.data.user.id">
+                            </md-input-container>
+                            <md-input-container flex class="without-error">
+                                <label>유저이름</label>
+                                <input readonly type="text" ng-model="ContentInfoModal.data.user.nickname">
+                            </md-input-container>
+                        </div>
+                        <!-- CREATOR DATA END -->
                     </div>
                 </div>
 
