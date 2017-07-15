@@ -1,4 +1,4 @@
-<md-dialog class="user-info-modal">
+<md-dialog class="user-info-modal" flex="60">
     <md-toolbar flex-order="1">
         <div class="md-toolbar-tools" flex>
             <h2>유저 정보</h2>
@@ -14,35 +14,54 @@
             ng-init="UsrInfoModal.form = UsrInfoModal.form"
         >
             <div class="layout-padding" layout="column">
-                <div layout="row">
-                    <div class="user-img-wrapper" flex="30">
-                        <img
-                            ng-src="{{UsrInfoModal.userProfile}}"
-                            alt="{{'user-profile-image-' + UsrInfoModal.data.id}}"
-                        >
+                <div layout="column" class="fieldset" flex>
+                    <legend>유저 데이터</legend>
+                    <div layout="column" layout-align="center center">
+                        <div class="user-img-wrapper">
+                            <img
+                                ng-src="{{UsrInfoModal.userProfile}}"
+                                alt="{{'user-profile-image-' + UsrInfoModal.data.id}}"
+                            >
+                        </div>
                     </div>
-                    <div layout="column" class="fieldset" flex>
-                        <legend>유저 데이터</legend>
-                        <div layout="row">
-                            <md-input-container flex class="without-error">
-                                <label>생성일</label>
-                                <input readonly type="text" ng-model="UsrInfoModal.data.createdAt">
-                            </md-input-container>
-                            <md-input-container flex class="without-error">
-                                <label>최근 업데이트일</label>
-                                <input readonly type="text" ng-model="UsrInfoModal.data.updatedAt">
-                            </md-input-container>
-                        </div>
-                        <div layout="row">
-                            <md-input-container flex class="without-error">
-                                <label>유저ID</label>
-                                <input readonly type="text" ng-model="UsrInfoModal.data.id">
-                            </md-input-container>
-                            <md-input-container flex class="without-error">
-                                <label>이름</label>
-                                <input readonly type="text" ng-model="UsrInfoModal.data.nickname">
-                            </md-input-container>
-                        </div>
+                    <div class="divide30"></div>
+                    <div layout="row">
+                        <md-input-container flex class="without-error">
+                            <label>최근 로그인 시간</label>
+                            <input readonly type="text" ng-model="UsrInfoModal.data.lastLoginTime">
+                        </md-input-container>
+                        <md-input-container flex class="without-error">
+                            <label>회원가입한 날</label>
+                            <input readonly type="text" ng-model="UsrInfoModal.data.createdAt.date">
+                        </md-input-container>
+                        <md-input-container flex class="without-error">
+                            <label>최근 정보 업데이트일</label>
+                            <input readonly type="text" ng-model="UsrInfoModal.data.updatedAt.date">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex class="without-error">
+                            <label>유저ID</label>
+                            <input readonly type="text" ng-model="UsrInfoModal.data.id">
+                        </md-input-container>
+                        <md-input-container flex class="without-error">
+                            <label>이름</label>
+                            <input readonly type="text" ng-model="UsrInfoModal.data.nickname">
+                        </md-input-container>
+                        <md-input-container flex class="without-error">
+                            <label>이메일</label>
+                            <input readonly type="text" ng-model="UsrInfoModal.data.email">
+                        </md-input-container>
+                    </div>
+                    <div layout="row">
+                        <md-input-container flex class="without-error">
+                            <label>현재 상태</label>
+                            <input readonly type="text" ng-model="UsrInfoModal.data.status">
+                        </md-input-container>
+                        <md-input-container flex class="without-error">
+                            <label>회원 등급</label>
+                            <input readonly type="text" ng-model="UsrInfoModal.data.grade">
+                        </md-input-container>
                     </div>
                 </div>
             </div>

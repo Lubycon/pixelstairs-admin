@@ -25,6 +25,7 @@ angular
         'ngFileUpload', // FILE UPLOAD MODULE
         'infinite-scroll', // INFINITE SCROLL
         'mdDataTable', // TABLE MODULE
+        'angularMoment', // MOMENT MODULE
 
         'app.env', // ENV CONSTANTS
         'app.config', // APP CONFIG MODULE
