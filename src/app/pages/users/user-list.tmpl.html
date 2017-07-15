@@ -35,6 +35,15 @@
             </span>
         </mdt-custom-cell>
 
+        <mdt-custom-cell column-key="nickname" class="cell-btn">
+            <a
+                class="cell-btn"
+                ng-click="clientScope.UsrListCtrl.showUserModal(rowId)"
+            >
+                {{value}}
+            </a>
+        </mdt-custom-cell>
+
         <mdt-custom-cell column-key="status">
             <span class="badge" ng-class="{'good': value === 'active', 'warning': value === 'inactive'}">
                 {{value}}
