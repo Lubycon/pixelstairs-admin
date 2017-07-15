@@ -49,7 +49,7 @@ export class UserListController {
     }
 
     onClick() {
-        console.log(1);
+
     }
 
     __bindToTemp__(res) {

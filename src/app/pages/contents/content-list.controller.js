@@ -14,6 +14,11 @@ export class ContentListController {
             pageSize: $location.search().PageSize || 20
         };
 
+        this.modalStatus = {
+            content: false,
+            user: false
+        };
+
         (this.init)();
     }
 
@@ -46,6 +51,20 @@ export class ContentListController {
                 };
             }
         });
+    }
+
+    showUserModal() {
+        this.modalStatus.user = true;
+    }
+    hideUserModal() {
+        this.modalStatus.user = false;
+    }
+
+    showContentModal() {
+        this.modalStatus.content = true;
+    }
+    hideContentModal() {
+        this.modalStatus.content = false;
     }
 
     __bindToTemp__(res) {
