@@ -33,4 +33,19 @@ export class ContentInfoModalController {
     close() {
         this.$mdDialog.cancel();
     }
+
+    // TEST
+    testPut() {
+        let data = $.extend({}, this.data);
+        data.title = '어드민 업데이트 테스트 입니다. 1';
+
+        this.APIService.resource('contents.detail', {
+            id: data.id
+        }).put(data).then(res => {
+            console.log(res);
+        }, err => {
+            console.log(err);
+        });
+    }
+    // TEST
 }
