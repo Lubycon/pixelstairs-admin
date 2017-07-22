@@ -1,7 +1,6 @@
 import '../constants/constants.module';
 
 import { httpConfig } from './http.config';
-import { toastrConfig } from './toastr.config';
 import { cookieConfig } from './cookie.config';
 import { locationConfig } from './location.config';
 import { languageConfig } from './language.config';
@@ -14,8 +13,6 @@ angular
         'app.env', 'app.constants'
     ])
     .config(httpConfig)
-
-    .config(toastrConfig)
 
     .config(cookieConfig)
 

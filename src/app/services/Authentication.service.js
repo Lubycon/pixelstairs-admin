@@ -3,7 +3,6 @@ export class AuthenticationService {
         $rootScope, $window, $location, $state, $filter,
         $log, Restangular, $q,
         CookieService, APIService, HistoryService, AppSettingService,
-        toastr,
         CUSTOM_HEADER_PREFIX
     ) {
         'ngInject';
@@ -21,8 +20,6 @@ export class AuthenticationService {
         this.APIService = APIService;
         this.HistoryService = HistoryService;
         this.AppSettingService = AppSettingService;
-
-        this.toastr = toastr;
 
         this.CUSTOM_HEADER_PREFIX = CUSTOM_HEADER_PREFIX;
     }

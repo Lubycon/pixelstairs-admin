@@ -1,7 +1,7 @@
 export class AppSettingService {
     constructor (
         $rootScope, $http, $log, $q, $window,
-        Restangular, CookieService, toastr,
+        Restangular, CookieService,
         CUSTOM_HEADER_PREFIX
     ) {
         'ngInject';
@@ -14,8 +14,6 @@ export class AppSettingService {
 
         this.Restangular = Restangular;
         this.CookieService = CookieService;
-
-        this.toastr = toastr;
 
         this.CUSTOM_HEADER_PREFIX = CUSTOM_HEADER_PREFIX;
     }
@@ -59,11 +57,6 @@ export class AppSettingService {
         this.Restangular.setDefaultHeaders(defaultHeaders);
     }
 
-
-
-
-
-
     /* @PRIVATE METHOD */
     __setSetting__(data, storedData) {
         /*
@@ -72,18 +65,7 @@ export class AppSettingService {
             2. 기존 접속위치와 현재 접속위치가 달라졌습니다. 언어를 현재 접속 위치에 맞게 바꾸시겠습니까?
             3. boolean -> exit 0
         */
-        if(storedData && data.country_code !== storedData.country_code) {
-            this.toastr.warning(`Your Location is changed from <br>${storedData.country_code} to ${data.country_code}.<br>If you want to change to new language, click this message`, '', {
-                timeOut: false,
-                closeButton: true,
-                extendedTimeOut: 100000,
-                toastClass: 'toast toast-location-change',
-                tapToDismiss: false,
-                onTap: () => { this.__removeStoredData__('reload'); }
-            });
-            this.$rootScope.setting = storedData;
-        }
-        else if(storedData && data.country_code === storedData.country_code) {
+        if(storedData) {
             this.$rootScope.setting = storedData;
         }
         else this.$rootScope.setting = data;

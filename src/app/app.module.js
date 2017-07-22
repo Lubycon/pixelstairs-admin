@@ -21,7 +21,6 @@ angular
         'ngMaterial', // ANGULAR MATERIAL MODULE
         'restangular', // REST API MODULE
         'ui.router', // STATE CONTROL MODULE FOR SPA
-        'toastr', // TOAST
         'ngFileUpload', // FILE UPLOAD MODULE
         'infinite-scroll', // INFINITE SCROLL
         'mdDataTable', // TABLE MODULE
