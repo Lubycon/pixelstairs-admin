@@ -1,6 +1,7 @@
 
 import { UserAgentDetection } from './ua.constant.js';
 import { APP_GLOBAL_MENU, APP_HEADER_MENU, APP_USER_MENU } from './menu.constant.js';
+import { API_LIST } from './api.constant';
 
 angular
     .module('app.constants', [
@@ -18,7 +19,7 @@ angular
         name: 'LANGUAGES.KOREAN',
         key: 'ko-KR'
     }])
-
+    .constant('API_LIST', API_LIST)
     .constant('APP_GLOBAL_MENU', APP_GLOBAL_MENU)
     .constant('APP_HEADER_MENU', APP_HEADER_MENU)
     .constant('APP_USER_MENU', APP_USER_MENU)
