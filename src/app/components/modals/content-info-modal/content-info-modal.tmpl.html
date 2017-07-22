@@ -3,8 +3,17 @@
         <div class="md-toolbar-tools" flex>
             <h2>아트워크 정보</h2>
             <span flex></span>
+
+            <md-button
+                class="md-icon-button"
+                ng-click="ContentInfoModal.isModifyEnable = true"
+            >
+                <md-icon><i class="xi-pen"></i></md-icon>
+                <md-tooltip md-direction="bottom">수정하기</md-tooltip>
+            </md-button>
             <md-button class="md-icon-button" ng-click="ContentInfoModal.close()">
                 <md-icon><i class="xi-close"></i></md-icon>
+                <md-tooltip md-direction="bottom">닫기</md-tooltip>
             </md-button>
         </div>
     </md-toolbar>
@@ -27,45 +36,57 @@
                         <div layout="row">
                             <md-input-container flex class="without-error">
                                 <label>생성일</label>
-                                <input readonly type="text" ng-model="ContentInfoModal.data.createdAt">
+                                <input readonly disabled type="text" ng-model="ContentInfoModal.data.createdAt">
                             </md-input-container>
                             <md-input-container flex class="without-error">
                                 <label>최근 업데이트일</label>
-                                <input readonly type="text" ng-model="ContentInfoModal.data.updatedAt">
+                                <input readonly disabled type="text" ng-model="ContentInfoModal.data.updatedAt">
                             </md-input-container>
                         </div>
                         <div layout="row">
                             <md-input-container flex class="without-error">
                                 <label>아트워크ID</label>
-                                <input readonly type="text" ng-model="ContentInfoModal.data.id">
+                                <input readonly disabled type="text" ng-model="ContentInfoModal.data.id">
                             </md-input-container>
                             <md-input-container flex class="without-error">
                                 <label>제목</label>
-                                <input readonly type="text" ng-model="ContentInfoModal.data.title">
+                                <input
+                                    ng-disabled="!ContentInfoModal.isModifyEnable"
+                                    type="text"
+                                    ng-model="ContentInfoModal.data.title"
+                                >
                             </md-input-container>
                         </div>
                         <div layout="row">
                             <md-input-container flex class="without-error md-input-has-value">
                                 <label>태그</label>
-                                <md-chips>
-                                    <md-chip ng-repeat="tag in ContentInfoModal.data.hashTags">{{tag}}</md-chip>
+                                <md-chips
+                                    ng-model="ContentInfoModal.data.hashTags"
+                                    readonly="!ContentInfoModal.isModifyEnable"
+                                    md-enable-chip-edit="true"
+                                    md-on-add="ContentInfoModal.validateTag($chip)"
+                                >
                                 </md-chips>
                             </md-input-container>
                         </div>
                         <div layout="row">
                             <md-input-container flex class="without-error">
                                 <label>설명</label>
-                                <textarea readonly ng-model="ContentInfoModal.data.description" class="no-resize"></textarea>
+                                <textarea
+                                    ng-disabled="!ContentInfoModal.isModifyEnable"
+                                    ng-model="ContentInfoModal.data.description"
+                                    class="no-resize">
+                                </textarea>
                             </md-input-container>
                         </div>
                         <div layout="row">
                             <md-input-container flex class="without-error">
                                 <label>좋아요 수</label>
-                                <input readonly type="text" ng-model="ContentInfoModal.data.counts.like">
+                                <input readonly disabled type="text" ng-model="ContentInfoModal.data.counts.like">
                             </md-input-container>
                             <md-input-container flex class="without-error">
                                 <label>조회 수</label>
-                                <input readonly type="text" ng-model="ContentInfoModal.data.counts.view">
+                                <input readonly disabled type="text" ng-model="ContentInfoModal.data.counts.view">
                             </md-input-container>
                         </div>
                         <!-- ARTWORK DATA END -->
@@ -75,11 +96,11 @@
                         <div layout="row">
                             <md-input-container flex class="without-error">
                                 <label>유저ID</label>
-                                <input readonly type="text" ng-model="ContentInfoModal.data.user.id">
+                                <input readonly disabled type="text" ng-model="ContentInfoModal.data.user.id">
                             </md-input-container>
                             <md-input-container flex class="without-error">
                                 <label>유저이름</label>
-                                <input readonly type="text" ng-model="ContentInfoModal.data.user.nickname">
+                                <input readonly disabled type="text" ng-model="ContentInfoModal.data.user.nickname">
                             </md-input-container>
                         </div>
                         <!-- CREATOR DATA END -->
@@ -90,10 +111,17 @@
     </md-dialog-content>
     <md-dialog-action flex-order="3">
         <div layout="row">
-            <md-button ng-click="ContentInfoModal.testPut()" flex>
-                테스트 업데이트
+            <md-button
+                ng-if="ContentInfoModal.isModifyEnable"
+                ng-click="ContentInfoModal.putData()"
+                flex
+            >
+                변경사항저장
             </md-button>
-            <md-button ng-click="ContentInfoModal.close()" flex>
+            <md-button
+                ng-click="ContentInfoModal.close()"
+                flex
+            >
                 닫기
             </md-button>
         </div>
