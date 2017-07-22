@@ -59,7 +59,8 @@ export class ContentListController {
             parent: angular.element(document.body),
             clickOutsideToClose: true,
             locals: {
-                userId: id
+                userId: id,
+                $parentScope: this
             }
         });
     }
@@ -73,7 +74,8 @@ export class ContentListController {
             clickOutsideToClose: true,
             disableParentScroll: true,
             locals: {
-                contentId: id
+                contentId: id,
+                $parentScope: this
             }
         });
     }
