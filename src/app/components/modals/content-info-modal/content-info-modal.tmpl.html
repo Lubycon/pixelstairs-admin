@@ -6,6 +6,13 @@
 
             <md-button
                 class="md-icon-button"
+                ng-click="ContentInfoModal.confirmDeleteContent()"
+            >
+                <md-icon><i class="xi-trash"></i></md-icon>
+                <md-tooltip md-direction="bottom">삭제하기</md-tooltip>
+            </md-button>
+            <md-button
+                class="md-icon-button"
                 ng-click="ContentInfoModal.isModifyEnable = true"
             >
                 <md-icon><i class="xi-pen"></i></md-icon>
