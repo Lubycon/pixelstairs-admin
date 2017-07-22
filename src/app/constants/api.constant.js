@@ -28,7 +28,7 @@ export const API_LIST = {
     contents: () => {
         const prefix = 'contents';
         return {
-            list: `v1/${prefix}`,
+            list: `admin/${prefix}`,
             detail: `admin/${prefix}/{id}`
         };
     },

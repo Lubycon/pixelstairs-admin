@@ -86,7 +86,7 @@ export class ContentInfoModalController {
     __contentDeleteResolve__() {
         let toast = this.$mdToast.simple()
             .position('top right')
-            .textContent(`서버문제로 ${this.data.id}번 컨텐츠가 성공적으로 삭제되었습니다.`)
+            .textContent(`${this.data.id}번 컨텐츠가 성공적으로 삭제되었습니다.`)
             .hideDelay(3000);
         this.$mdToast.show(toast);
 
