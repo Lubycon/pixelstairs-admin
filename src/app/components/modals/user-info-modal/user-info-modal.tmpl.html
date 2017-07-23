@@ -4,6 +4,13 @@
             <h2>유저 정보</h2>
             <span flex></span>
 
+            <md-button
+                class="md-icon-button"
+                ng-click="UsrInfoModal.isModifyEnable = true"
+            >
+                <md-icon><i class="xi-pen"></i></md-icon>
+                <md-tooltip md-direction="bottom">수정하기</md-tooltip>
+            </md-button>
             <md-button class="md-icon-button" ng-click="UsrInfoModal.close()">
                 <md-icon><i class="xi-close"></i></md-icon>
                 <md-tooltip md-direction="bottom">닫기</md-tooltip>
@@ -83,6 +90,7 @@
                                 <md-option
                                     ng-repeat="list in UsrInfoModal.userGradeList"
                                     ng-value="list.value"
+                                    ng-disabled="list.id === 2"
                                 >
                                     {{list.name}}
                                 </md-option>
