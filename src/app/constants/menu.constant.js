@@ -14,8 +14,8 @@ export const APP_GLOBAL_MENU = [{
         name: 'Employees',
         link: 'common.default.users1'
     },{
-        name: 'Authentication',
-        link: 'common.default.maind'
+        name: 'Blacklist',
+        link: 'common.default.users-black'
     }]
 },{
     name: 'Contents',

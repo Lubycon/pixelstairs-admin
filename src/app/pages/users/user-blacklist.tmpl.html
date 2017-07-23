@@ -1,0 +1,53 @@
+<div layout="column" layout-align="top center" class="container layout-padding">
+    <mdt-table
+        class="full-width"
+        paginated-rows="{
+            isEnabled: true,
+            rowsPerPageValues: [20, 50, 100]
+        }"
+        mdt-row-paginator="UsrBlacklistCtrl.getDataCollection(page, pageSize)"
+        table-card="{
+            actionIcons: true,
+            visible: true,
+            columnSelector: true
+        }"
+        mdt-loading-indicator="{
+            color: '#009688'
+        }"
+        mdt-row="{
+            'table-row-id-key': 'id',
+            'column-keys': [
+                'id', 'profileImg', 'nickname', 'email', 'status'
+            ]
+        }"
+    >
+        <mdt-header-row>
+            <mdt-column align-rule="left">#</mdt-column>
+            <mdt-column align-rule="left">#</mdt-column>
+            <mdt-column align-rule="left">Name</mdt-column>
+            <mdt-column align-rule="left">Email</mdt-column>
+            <mdt-column align-rule="left">Status</mdt-column>
+        </mdt-header-row>
+
+        <mdt-custom-cell column-key="profileImg" html-content="true" class="user-profile-cell">
+            <span class="user-profile-cell">
+                <img ng-src="{{clientScope.UsrBlacklistCtrl.ImageService.getUserProfile(value)}}" alt="{{'user-profile-' + rowId}}">
+            </span>
+        </mdt-custom-cell>
+
+        <mdt-custom-cell column-key="nickname" class="cell-btn">
+            <a
+                class="cell-btn"
+                ng-click="clientScope.UsrBlacklistCtrl.showUserModal(rowId)"
+            >
+                {{value}}
+            </a>
+        </mdt-custom-cell>
+
+        <mdt-custom-cell column-key="status">
+            <span class="badge" ng-class="{'good': value === 'active', 'warning': value === 'inactive'}">
+                {{value}}
+            </span>
+        </mdt-custom-cell>
+    </mdt-table>
+</div>

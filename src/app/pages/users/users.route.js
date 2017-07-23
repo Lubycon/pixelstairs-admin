@@ -10,5 +10,12 @@ export function routerConfig ($stateProvider) {
             controllerAs: 'UsrListCtrl',
             authenticate: 'member'
         })
+        .state('common.default.users-black', {
+            url: '/users/blacklist',
+            templateUrl: 'app/pages/users/user-blacklist.tmpl.html',
+            controller: 'UserBlacklistController',
+            controllerAs: 'UsrBlacklistCtrl',
+            authenticate: 'member'
+        })
         ;
 }
