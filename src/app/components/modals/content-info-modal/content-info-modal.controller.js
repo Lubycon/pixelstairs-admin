@@ -12,7 +12,6 @@ export class ContentInfoModalController {
         this.APIService = APIService;
         this.ImageService = ImageService;
 
-        this.originData = null;
         this.data = null;
         this.contentImage = null;
 
@@ -30,8 +29,7 @@ export class ContentInfoModalController {
         return this.APIService.resource('contents.detail', {
             id
         }).get().then(res => {
-            this.originData = res.result;
-            this.data = angular.copy(res.result);
+            this.data = res.result;
             this.isDeletedContent = !!this.data.deletedAt;
             this.contentImage = this.ImageService.setResolution(this.data.image, '640');
         }, err => {

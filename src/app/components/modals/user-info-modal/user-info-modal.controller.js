@@ -1,6 +1,7 @@
 export class UserInfoModalController {
     constructor(
         $scope, $mdDialog, userId, moment,
+        FORM_DATA,
         APIService, ImageService
     ) {
         'ngInject';
@@ -9,6 +10,14 @@ export class UserInfoModalController {
 
         this.APIService = APIService;
         this.ImageService = ImageService;
+
+        this.data = null;
+
+        this.isModifyEnable = false;
+        this.isDeletedContent = true;
+
+        this.userStatusList = FORM_DATA.userStatus;
+        this.userGradeList = FORM_DATA.userGrade;
 
         (this.init)(userId);
     }
