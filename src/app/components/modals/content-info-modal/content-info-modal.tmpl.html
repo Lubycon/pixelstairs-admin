@@ -6,7 +6,8 @@
 
             <md-button
                 class="md-icon-button"
-                ng-click="ContentInfoModal.confirmDeleteContent()"
+                ng-click="ContentInfoModal.deleteData()"
+                ng-if="!ContentInfoModal.isDeletedContent"
             >
                 <md-icon><i class="xi-trash"></i></md-icon>
                 <md-tooltip md-direction="bottom">삭제하기</md-tooltip>
@@ -25,6 +26,13 @@
         </div>
     </md-toolbar>
     <md-dialog-content flex-order="2">
+        <div
+            ng-show="ContentInfoModal.data && ContentInfoModal.isDeletedContent"
+            class="deleted-content-alert"
+        >
+            <i class="xi-ban"></i>
+            <span>해당 컨텐츠는 삭제된 컨텐츠입니다.</span>
+        </div>
         <form
             name="ContentInfoModal.form"
             ng-init="ContentInfoModal.form = ContentInfoModal.form"

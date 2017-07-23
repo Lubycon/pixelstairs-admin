@@ -15,4 +15,8 @@
         background-color: $red;
         box-shadow: 0 3px 0 darken($red, 8%);
     }
+    &.deleted {
+        background-color: $red;
+        box-shadow: 0 3px 0 darken($red, 8%);
+    }
 }

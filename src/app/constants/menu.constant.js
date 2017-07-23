@@ -24,28 +24,6 @@ export const APP_GLOBAL_MENU = [{
     submenu: [{
         name: 'Search',
         link: 'common.default.contents'
-    },{
-        name: 'Detail',
-        link: 'common.default.maind'
-    }]
-},{
-    name: 'Finance',
-    open: false,
-    icon: 'xi-bank',
-    submenu: [{
-        name: 'Donate',
-        link: 'common.default.maind'
-    }]
-},{
-    name: 'Analytics',
-    open: false,
-    icon: 'xi-presentation',
-    submenu: [{
-        name: 'Timeline',
-        link: 'common.default.maind'
-    },{
-        name: 'Java',
-        link: 'common.default.maind'
     }]
 },{
     name: 'Server Status',
@@ -78,16 +56,10 @@ export const APP_HEADER_MENU = [{
     link: 'common.default.main'
 }];
 
-export const APP_USER_MENU = [{
-    icon: 'xi-presentation',
-    name: 'Dashboard',
-    link: 'common.default.main'
-},{
-    icon: 'xi-branch',
-    name: '[Test] Branch',
-    link: 'common.default.main'
-},{
-    icon: 'xi-pull-requests',
-    name: '[Test] Pull Request',
-    link: 'common.default.main'
-}];
+export const APP_USER_MENU = [
+    // {
+    //     icon: 'xi-presentation',
+    //     name: 'Dashboard',
+    //     link: 'common.default.main'
+    // }
+];
