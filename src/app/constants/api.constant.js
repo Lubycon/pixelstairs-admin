@@ -25,6 +25,12 @@ export const API_LIST = {
             }
         };
     },
+    blackMembers: () => {
+        const prefix = 'blackmembers';
+        return {
+            list: `admin/${prefix}`
+        };
+    },
     contents: () => {
         const prefix = 'contents';
         return {

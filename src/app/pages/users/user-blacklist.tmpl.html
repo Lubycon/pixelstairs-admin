@@ -15,9 +15,9 @@
             color: '#009688'
         }"
         mdt-row="{
-            'table-row-id-key': 'id',
+            'table-row-id-key': 'user.id',
             'column-keys': [
-                'id', 'profileImg', 'nickname', 'email', 'status'
+                'user.id', 'user.profileImg', 'user.nickname', 'user.email', 'user.status', 'blackInfo.createdAt'
             ]
         }"
     >
@@ -27,15 +27,16 @@
             <mdt-column align-rule="left">Name</mdt-column>
             <mdt-column align-rule="left">Email</mdt-column>
             <mdt-column align-rule="left">Status</mdt-column>
+            <mdt-column align-rule="left">Blacklist date</mdt-column>
         </mdt-header-row>
 
-        <mdt-custom-cell column-key="profileImg" html-content="true" class="user-profile-cell">
+        <mdt-custom-cell column-key="user.profileImg" html-content="true" class="user-profile-cell">
             <span class="user-profile-cell">
                 <img ng-src="{{clientScope.UsrBlacklistCtrl.ImageService.getUserProfile(value)}}" alt="{{'user-profile-' + rowId}}">
             </span>
         </mdt-custom-cell>
 
-        <mdt-custom-cell column-key="nickname" class="cell-btn">
+        <mdt-custom-cell column-key="user.nickname" class="cell-btn">
             <a
                 class="cell-btn"
                 ng-click="clientScope.UsrBlacklistCtrl.showUserModal(rowId)"
@@ -44,7 +45,7 @@
             </a>
         </mdt-custom-cell>
 
-        <mdt-custom-cell column-key="status">
+        <mdt-custom-cell column-key="user.status">
             <span class="badge" ng-class="{'good': value === 'active', 'warning': value === 'inactive'}">
                 {{value}}
             </span>
