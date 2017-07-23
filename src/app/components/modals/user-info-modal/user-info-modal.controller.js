@@ -1,12 +1,15 @@
 export class UserInfoModalController {
     constructor(
-        $scope, $mdDialog, userId, moment,
-        FORM_DATA,
+        $parentScope, $scope, $mdDialog, moment, $mdToast,
+        userId, FORM_DATA,
         APIService, ImageService
     ) {
         'ngInject';
 
+        this.$parentScope = $parentScope;
+
         this.$mdDialog = $mdDialog;
+        this.$mdToast = $mdToast;
 
         this.APIService = APIService;
         this.ImageService = ImageService;
@@ -42,5 +45,45 @@ export class UserInfoModalController {
 
     close() {
         this.$mdDialog.cancel();
+    }
+
+    putData() {
+        let data = angular.copy(this.data);
+
+        let confirm = this.$mdDialog.confirm()
+            .title(`${this.data.id}번 유저 정보를 정말로 변경하시겠어요?`)
+            .ok('변경할게요')
+            .cancel('다시 한번 생각해볼게요');
+
+        this.$mdDialog.show(confirm).then(res => {
+            this.APIService.resource('members.detail', {
+                id: data.id
+            }).put(data).then(res => {
+                this.__userMethodResolve__('변경');
+                this.isModifyEnable = false;
+            }, err => {
+                this.__userMethodReject__('변경', err);
+                this.isModifyEnable = false;
+            });
+        }, err => {
+            this.$parentScope.showUserModal(this.data.id);
+        });
+    }
+
+    __userMethodResolve__(method) {
+        let toast = this.$mdToast.simple()
+            .position('top right')
+            .textContent(`${this.data.id}번 유저 정보가 성공적으로 ${method}되었습니다.`)
+            .hideDelay(3000);
+        this.$mdToast.show(toast);
+
+        this.close();
+    }
+    __userMethodReject__(method, err) {
+        let toast = this.$mdToast.simple()
+            .position('top right')
+            .textContent(`[${err.status}] 서버문제로 ${this.data.id}번 유저 정보 ${method}에 실패하였습니다. 현상이 계속 되면 서버관리자에게 문의하세요.`)
+            .hideDelay(3000);
+        this.$mdToast.show(toast);
     }
 }

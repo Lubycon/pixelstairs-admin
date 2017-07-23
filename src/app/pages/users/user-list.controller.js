@@ -54,7 +54,8 @@ export class UserListController {
             parent: angular.element(document.body),
             clickOutsideToClose: true,
             locals: {
-                userId: id
+                userId: id,
+                $parentScope: this
             }
         });
     }

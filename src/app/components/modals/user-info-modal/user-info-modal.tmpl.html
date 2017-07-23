@@ -103,6 +103,13 @@
     </md-dialog-content>
     <md-dialog-action flex-order="3">
         <div layout="row">
+            <md-button
+                ng-if="UsrInfoModal.isModifyEnable"
+                ng-click="UsrInfoModal.putData()"
+                flex
+            >
+                변경사항저장
+            </md-button>
             <md-button ng-click="UsrInfoModal.close()" flex>
                 닫기
             </md-button>
