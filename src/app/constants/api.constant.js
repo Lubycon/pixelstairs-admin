@@ -28,7 +28,8 @@ export const API_LIST = {
     blackMembers: () => {
         const prefix = 'blackmembers';
         return {
-            list: `admin/${prefix}`
+            list: `admin/${prefix}`,
+            detail: `admin/${prefix}/{id}/detail`
         };
     },
     contents: () => {

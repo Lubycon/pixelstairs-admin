@@ -24,7 +24,9 @@
         >
             <div class="layout-padding" layout="column">
                 <div layout="column" class="fieldset" flex>
-                    <legend>유저 데이터</legend>
+                    <legend layout="row">
+                        <span>유저 데이터</span>
+                    </legend>
                     <div layout="column" layout-align="center center">
                         <div class="user-img-wrapper">
                             <img
@@ -95,6 +97,16 @@
                                     {{list.name}}
                                 </md-option>
                             </md-select>
+                        </md-input-container>
+                        <md-input-container flex class="without-error md-input-has-value">
+                            <label>블랙리스트</label>
+                            <md-switch
+                                ng-show="UsrInfoModal.data"
+                                ng-model="UsrInfoModal.data.isBlackUser"
+                                ng-disabled="!UsrInfoModal.isModifyEnable"
+                            >
+                                <span class="blacklist-symbol">{{UsrInfoModal.data.isBlackUser ? 'O' : 'X'}}</span>
+                            </md-switch>
                         </md-input-container>
                     </div>
                 </div>

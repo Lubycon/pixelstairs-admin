@@ -1,4 +1,9 @@
 .user-info-modal {
+    md-switch {
+        .blacklist-symbol {
+            font-weight: bold;
+        }
+    }
     md-dialog-content {
         .user-img-wrapper {
             width: 80px;
