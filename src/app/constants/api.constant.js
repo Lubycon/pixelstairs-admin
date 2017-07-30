@@ -18,11 +18,7 @@ export const API_LIST = {
             simple: `v1/${prefix}/simple`,
             detail: `admin/${prefix}/{id}/detail`,
 
-            isExist: `v1/${prefix}/isexist`,
-            pwd: {
-                mail: `v1/${prefix}/password/mail`,
-                reset: `v1/${prefix}/password/reset`
-            }
+            isExist: `v1/${prefix}/isexist`
         };
     },
     blackMembers: () => {
@@ -37,26 +33,6 @@ export const API_LIST = {
         return {
             list: `admin/${prefix}`,
             detail: `admin/${prefix}/{id}`
-        };
-    },
-    certs: () => {
-        const prefix = 'certs';
-        return {
-            signup: {
-                mail: `${prefix}/signup/mail`,
-                time: `${prefix}/signup/time`,
-                code: `${prefix}/signup/code`
-            },
-            password: {
-                code: `${prefix}/password/code`
-            }
-        };
-    },
-    quotes: () => {
-        const prefix = 'quotes';
-        return {
-            success: `${prefix}/success`,
-            mistake: `${prefix}/mistake`
         };
     }
 };
