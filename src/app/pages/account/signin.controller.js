@@ -46,6 +46,12 @@ export class SigninController {
     __reject__(err) {
         this.isBusy = false;
         /*@LOG*/ this.$log.debug(err);
-        alert(`[${err.status} ${err.statusText} ] - ${err.data.status.code} ${err.data.status.msg}`);
+
+        if(err.status === 403) {
+            alert('어드민 센터에 접속할 수 없는 계정입니다.');
+        }
+        else {
+            alert(`[${err.status} ${err.statusText} ] - ${err.data.status.code} ${err.data.status.msg}`);
+        }
     }
 }
