@@ -9,30 +9,30 @@ export const API_LIST = {
     members: () => {
         const prefix = 'members';
         return {
-            signin: `v1/${prefix}/signin`,
-            signout: `v1/${prefix}/signout`,
-            signup: `v1/${prefix}/signup`,
-            signdrop: `v1/${prefix}/signdrop`,
+            signin: `${prefix}/signin`,
+            signout: `${prefix}/signout`,
+            signup: `${prefix}/signup`,
+            signdrop: `${prefix}/signdrop`,
 
-            list: `admin/${prefix}`,
-            simple: `v1/${prefix}/simple`,
-            detail: `admin/${prefix}/{id}/detail`,
+            list: `${prefix}`,
+            simple: `${prefix}/simple`,
+            detail: `${prefix}/{id}/detail`,
 
-            isExist: `v1/${prefix}/isexist`
+            isExist: `${prefix}/isexist`
         };
     },
     blackMembers: () => {
         const prefix = 'blackmembers';
         return {
-            list: `admin/${prefix}`,
-            detail: `admin/${prefix}/{id}/detail`
+            list: `${prefix}`,
+            detail: `${prefix}/{id}/detail`
         };
     },
     contents: () => {
         const prefix = 'contents';
         return {
-            list: `admin/${prefix}`,
-            detail: `admin/${prefix}/{id}`
+            list: `${prefix}`,
+            detail: `${prefix}/{id}`
         };
     }
 };
