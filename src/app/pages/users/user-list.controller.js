@@ -28,7 +28,7 @@ export class UserListController {
         this.query.pageIndex = pageIndex || this.query.pageIndex;
         this.query.pageSize = pageSize || this.query.pageSize;
 
-        return this.APIService.resource('members.list').get(this.query)
+        return this.APIService.resource('users.list').get(this.query)
         .then(res => {
             if(res.result && res.result.users) {
                 this.__bindToTemp__(res);

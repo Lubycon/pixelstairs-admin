@@ -28,7 +28,7 @@ export class UserBlacklistController {
         this.query.pageIndex = pageIndex || this.query.pageIndex;
         this.query.pageSize = pageSize || this.query.pageSize;
 
-        return this.APIService.resource('blackMembers.list').get(this.query)
+        return this.APIService.resource('blackusers.list').get(this.query)
         .then(res => {
             if(res.result && res.result.blackUsers) {
                 this.__bindToTemp__(res);

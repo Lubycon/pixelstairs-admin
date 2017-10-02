@@ -24,10 +24,10 @@ export class SigninController {
         this.isBusy = true;
 
         let data = angular.copy(this.formData);
-        this.APIService.resource('members.signin').post(data)
+        this.APIService.resource('users.signin').post(data)
         .then(res => {
             /*@LOG*/ this.$log.debug(res);
-            this.__resolve__(res.result.token).then(res => {
+            this.__resolve__(res.result).then(res => {
                 this.$state.go('common.default.main');
             });
         }, err => {
@@ -38,7 +38,8 @@ export class SigninController {
     /* @PRIVATE METHOD */
     __resolve__(token) {
         return this.AuthenticationService.set({
-            token,
+            accessToken: token.access_token,
+            refreshToken: token.refresh_token,
             state: null
         });
     }

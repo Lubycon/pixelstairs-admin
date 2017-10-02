@@ -6,7 +6,7 @@
 */
 
 export const API_LIST = {
-    members: () => {
+    users: () => {
         const prefix = 'members';
         return {
             signin: `${prefix}/signin`,
@@ -15,10 +15,11 @@ export const API_LIST = {
             signdrop: `${prefix}/signdrop`,
 
             list: `${prefix}`,
-            simple: `${prefix}/simple`,
-            detail: `${prefix}/{id}/detail`,
+            me: `${prefix}/me`,
+            info: `${prefix}/{id}`,
 
-            isExist: `${prefix}/isexist`
+            isExist: `${prefix}/isexist`,
+            refreshToken: `${prefix}/token/refresh`
         };
     },
     blackMembers: () => {

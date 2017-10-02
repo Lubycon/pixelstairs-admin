@@ -31,7 +31,7 @@ export class UserInfoModalController {
     }
 
     getUserData(id) {
-        this.APIService.resource('members.detail', {
+        this.APIService.resource('users.info', {
             id
         }).get().then(res => {
             this.data = res.result;
@@ -57,7 +57,7 @@ export class UserInfoModalController {
             .cancel('다시 한번 생각해볼게요');
 
         this.$mdDialog.show(confirm).then(res => {
-            this.APIService.resource('members.detail', {
+            this.APIService.resource('users.info', {
                 id: data.id
             }).put(data).then(res => {
                 this.__userMethodResolve__('변경');
