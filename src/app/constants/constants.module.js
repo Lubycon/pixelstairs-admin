@@ -27,5 +27,5 @@ angular
 
     .constant('FORM_DATA', FORM_DATA)
 
-    .constant('USER_DEFAULT_PROFILE_IMG', 'https://s3-ap-northeast-1.amazonaws.com/pixelstairsdev/user/default_profile_image.png')
+    .constant('USER_DEFAULT_PROFILE_IMG', 'https://s3.ap-northeast-2.amazonaws.com/pixelstairs/user/default_profile_image.png')
     ;

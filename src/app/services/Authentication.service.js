@@ -29,7 +29,7 @@ export class AuthenticationService {
         let defer = this.$q.defer();
 
         if(this.__isSigned__()) {
-            let token = this.CookieService.getDecrypt('auth'),
+            let accessToken = this.CookieService.getDecrypt('auth'),
                 refreshToken = this.CookieService.getDecrypt('refresh'),
                 authStatus = this.CookieService.getDecrypt('authStatus');
 
