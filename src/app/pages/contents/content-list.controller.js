@@ -16,12 +16,6 @@ export class ContentListController {
             pageIndex: $location.search().pageIndex || 1,
             pageSize: $location.search().PageSize || 20
         };
-
-        (this.init)();
-    }
-
-    init() {
-
     }
 
     getDataCollection(pageIndex, pageSize) {

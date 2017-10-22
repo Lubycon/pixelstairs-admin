@@ -26,14 +26,14 @@ export const APP_GLOBAL_MENU = [{
         link: 'common.default.contents'
     }]
 },{
-    name: 'Server Status',
+    name: 'Instagram',
     open: false,
-    icon: 'xi-network-server',
+    icon: 'xi-instagram',
     submenu: [{
-        name: 'Dashboard',
-        link: 'common.default.maind'
+        name: 'Followers',
+        link: 'common.default.insta-follow'
     },{
-        name: 'Traffic',
+        name: 'Unfollow',
         link: 'common.default.maind'
     }]
 }];
